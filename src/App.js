@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Vocab from "./components/vocab/vocab";
+import ChooseOption from "./components/vocab/options";
+import options from "./arrays/options";
 
 function App() {
+
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChooseOption options={options} onOptionChange={handleOptionChange} />
+      <Vocab wordsToTranslate={selectedOption.words} />
     </div>
   );
 }

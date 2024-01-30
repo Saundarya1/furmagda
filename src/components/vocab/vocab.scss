@@ -1,0 +1,27 @@
+.vocab-inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin: 20px;
+        border: solid, 2px;
+        border-color: black;
+        height: 50px;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bolder;
+        border-radius: 10px;
+    }
+
+    .question-input {
+        input {
+            background-color: rgb(162, 241, 162);
+        }
+    }
+
+    .answer-input {
+        input {
+            background-color: rgb(225, 94, 94);
+        }
+    }
+}
